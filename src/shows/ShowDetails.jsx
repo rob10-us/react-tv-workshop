@@ -13,5 +13,16 @@ export default function ShowDetails({ show }) {
     return <p>Please Select a show to learn more.</p>;
   }
 
-  return <div className="show-details"></div>;
+  return (
+    <div className="show-details">
+      <EpisodeList
+        name={show.name}
+        episodes={show.episodes}
+        selectedEpisode={selectedEpisode}
+        setSelectedEpisode={setSelectedEpisode}
+      />
+
+      <EpisodeDetails episode={selectedEpisode} />
+    </div>
+  );
 }
